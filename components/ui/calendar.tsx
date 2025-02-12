@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { DayPicker } from "react-day-picker"
+//import { ChevronLeft, ChevronRight } from "lucide-react"
+import { DayPicker } from "react-day-picker";
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
@@ -59,14 +59,48 @@ function Calendar({
         day_hidden: "invisible",
         ...classNames,
       }}
-      components={{
-        IconLeft: ({ className, ...props }) => (
-          <ChevronLeft className={cn("h-4 w-4", className)} {...props} />
-        ),
-        IconRight: ({ className, ...props }) => (
-          <ChevronRight className={cn("h-4 w-4", className)} {...props} />
-        ),
-      }}
+      // components={{
+      //   IconLeft: ({ className, ...props }) => (
+      //     <ChevronLeft className={cn("h-4 w-4", className)} {...props} />
+      //   ),
+      //   IconRight: ({ className, ...props }) => (
+      //     <ChevronRight className={cn("h-4 w-4", className)} {...props} />
+      //   ),
+      // }}
+      // components={{
+      //   Navigation: ({
+      //     nextMonth,
+      //     previousMonth,
+      //     goToMonth,
+      //   }: NavigationProps) => (
+      //     <div className="space-x-1 flex items-center">
+      //       {previousMonth && (
+      //         <button
+      //           type="button"
+      //           onClick={() => goToMonth(previousMonth)}
+      //           className={cn(
+      //             buttonVariants({ variant: "outline" }),
+      //             "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+      //           )}
+      //         >
+      //           <ChevronLeft className="h-4 w-4" />
+      //         </button>
+      //       )}
+      //       {nextMonth && (
+      //         <button
+      //           type="button"
+      //           onClick={() => goToMonth(nextMonth)}
+      //           className={cn(
+      //             buttonVariants({ variant: "outline" }),
+      //             "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+      //           )}
+      //         >
+      //           <ChevronRight className="h-4 w-4" />
+      //         </button>
+      //       )}
+      //     </div>
+      //   ),
+      // }}
       {...props}
     />
   )
