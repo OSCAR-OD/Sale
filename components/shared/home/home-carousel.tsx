@@ -18,7 +18,7 @@ import { ICarousel } from '@/types'
 
 export function HomeCarousel({ items }: { items: ICarousel[] }) {
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+    Autoplay({ delay: 4000, stopOnInteraction: true})
   )
 
   const t = useTranslations('Home')
@@ -28,8 +28,11 @@ export function HomeCarousel({ items }: { items: ICarousel[] }) {
       dir='ltr'
       plugins={[plugin.current]}
       className='w-full mx-auto '
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
+      // onMouseEnter={plugin.current.stop}
+      // onMouseLeave={plugin.current.reset}
+      opts={{
+        loop: true,
+      }}
     >
       <CarouselContent>
         {items.map((item) => (

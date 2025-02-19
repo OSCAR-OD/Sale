@@ -29,7 +29,7 @@ export async function generateMetadata(props: {
     return { title: t('Product.Product not found') }
   }
 
-  const imageUrl = product.images?.[0]?.startsWith('http')
+  const imageUrl = product.images?.[0]?.startsWith('https')
     ? product.images[0]
     : `${process.env.NEXT_PUBLIC_BASE_URL}${product.images[0]}`
 

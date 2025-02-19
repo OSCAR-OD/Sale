@@ -13,6 +13,12 @@ import { z } from 'zod'
 import { getSetting } from './setting.actions'
 
 // CREATE
+export async function signInWithCredentials(user: IUserSignIn) {
+  return await signIn('credentials', { ...user, redirect: false })
+}
+export const SignInWithGoogle = async () => {
+  await signIn('google')
+}
 export async function registerUser(userSignUp: IUserSignUp) {
   try {
     const user = await UserSignUpSchema.parseAsync({
@@ -86,13 +92,6 @@ export async function updateUserName(user: IUserName) {
   } catch (error) {
     return { success: false, message: formatError(error) }
   }
-}
-
-export async function signInWithCredentials(user: IUserSignIn) {
-  return await signIn('credentials', { ...user, redirect: false })
-}
-export const SignInWithGoogle = async () => {
-  await signIn('google')
 }
 export const SignOut = async () => {
   const redirectTo = await signOut({ redirect: false })
